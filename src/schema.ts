@@ -52,3 +52,17 @@ export const recommendationOutputSchema = z.object({
 });
 
 export type RecommendationOutput = z.infer<typeof recommendationOutputSchema>;
+
+const recommendationItemSchema = z.object({
+  priority: z.enum(["high", "medium", "low"]),
+  action: z.string(),
+  related_metrics: z.array(z.string()),
+  estimated_impact: z.string(),
+});
+
+export const recommendationsListSchema = z.object({
+  recommendations: z.array(recommendationItemSchema),
+});
+
+export type RecommendationItem = z.infer<typeof recommendationItemSchema>;
+export type RecommendationsList = z.infer<typeof recommendationsListSchema>;

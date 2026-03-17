@@ -31,14 +31,43 @@ des commentaires dans le code ou un document annexe.
 
 ## Principe
 
-### V1
+- Extraction des données (ex. toutes les 30 min depuis un fichier JSON ou flux).
+- Ingestion d’un extract par le node `ingestDataNode`, analyse par `analyzeNode`, puis recommandations dans `recommendNode` si anomalies.
 
-- extractation des donnée toutes les 30mins
-- ingestion d'un extract par le node `ingestDataNode`
-- analyse de la data par le node `analyzeNode`
+Petit graph mermaid pour expliquer brièvement les nodes:
 
-### V2
+```mermaid
+flowchart TD
+    START --> A[ingestDataNode]
+    A --> B[analyzeNode]
+    B --> C{routeAfterAnalyze}
+    C -->|oui| D[recommendNode]
+    C -->|non| END
+    D --> END
 
-- extractation des donnée toutes les 30mins
-- ingestion d'un extract par le node `ingestDataNode`
-- analyse de la data par le node `analyzeNode`
+    subgraph Pipeline
+        A
+        B
+        D
+    end
+```
+
+- **ingestDataNode** : lit le dernier message, parse le rapport JSON et l’ajoute à l’historique des rapports (limité à 10 pour limiter le context / la mémoire).
+- **analyzeNode** : détecte les anomalies (métriques au-dessus des seuils dans `constants.ts`, services offline).
+- **routeAfterAnalyze**: Il y a une petite optimisation si il n'y a pas de metrics au dessus des seuils. On skip **recommendNode**.
+- **recommendNode** : reçoit les derniers rapports et les anomalies, appelle le LLM et renvoie une liste structurée de recommandations au format :
+
+Exemple de retour:
+
+```json
+{
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Augmenter les ressources CPU de 20% ou activer l'autoscaling",
+      "related_metrics": ["cpu_usage", "latency_ms"],
+      "estimated_impact": "Réduction de la latence de ~30%"
+    }
+  ]
+}
+```

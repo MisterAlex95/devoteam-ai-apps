@@ -2,7 +2,10 @@ import { MessagesValue, ReducedValue, StateSchema } from "@langchain/langgraph";
 import * as z from "zod";
 import { anomalySliceSchema, Rapport, rapportSchema } from "./schema";
 
-const rapportReducer = (a: Rapport[], b: Rapport[]) => [...a, ...b];
+const RAPPORT_MAX_SIZE = 10;
+
+const rapportReducer = (a: Rapport[], b: Rapport[]) =>
+  [...a, ...b].slice(-RAPPORT_MAX_SIZE);
 
 export const baseStateFields = {
   rapportSchema: new ReducedValue(
@@ -10,6 +13,7 @@ export const baseStateFields = {
     { reducer: rapportReducer },
   ),
   anomaliesList: anomalySliceSchema,
+  report: z.string().default(() => ""),
   currentInput: z.string().default(() => ""),
   messages: MessagesValue,
 } as const;
