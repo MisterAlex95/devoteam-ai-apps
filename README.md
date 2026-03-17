@@ -29,10 +29,18 @@ des commentaires dans le code ou un document annexe.
 
 ---
 
-## Principe
+## Exercice
+
+### Choix de la technologie
+
+**Typescript**: J'en fais depuis quasiement 10 ans, je maitrise cette technologie parfaitement. De plus je suis adept de zod qui s'intègre parfaitement dans LangGraph.
+
+### Principe
 
 - Extraction des données (ex. toutes les 30 min depuis un fichier JSON ou flux).
 - Ingestion d’un extract par le node `ingestDataNode`, analyse par `analyzeNode`, puis recommandations dans `recommendNode` si anomalies.
+
+### Graph
 
 Petit graph mermaid pour expliquer brièvement les nodes:
 
