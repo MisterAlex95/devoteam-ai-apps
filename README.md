@@ -71,3 +71,11 @@ Exemple de retour:
   ]
 }
 ```
+
+## Note
+
+Dans le output je n'ai mis qu'un extrait. Je n'ai pas d'abonnement à des fournisseurs je host tout en local sur mon serveur personnelle a là maison ou je fais tourner un Ollama.
+
+Je me suis aussi efforcé de ne pas utiliser l'IA pendant le developpement de ce projet car je ne savais si c'était autorisé ou pas. (à l'exception du fichier `streamJson.ts`).
+
+Enfin, merci pour cette opportunité j'ai pu apprendre enormement de chose qui me motive à aller encore plus loin.
