@@ -1,4 +1,180 @@
-{"recommendations":[{"priority":"high","action":"Investigate API gateway degradation and resolve the issue","related_metrics":["service.api_gateway","latency_ms","error_rate"],"estimated_impact":"Reduce latency and error rate, improve service quality"},{"priority":"medium","action":"Optimize application to reduce CPU usage below 80%","related_metrics":["cpu_usage"],"estimated_impact":"Improve overall system performance and stability"},{"priority":"medium","action":"Increase memory allocation or optimize memory usage","related_metrics":["memory_usage"],"estimated_impact":"Reduce potential for out-of-memory errors"},{"priority":"medium","action":"Investigate high latency and optimize performance","related_metrics":["latency_ms"],"estimated_impact":"Improve response times and user experience"},{"priority":"medium","action":"Free up disk space or expand storage capacity","related_metrics":["disk_usage"],"estimated_impact":"Prevent storage-related issues and maintain system functionality"},{"priority":"low","action":"Monitor network traffic and consider optimizing or upgrading bandwidth","related_metrics":["network_in_kbps","network_out_kbps"],"estimated_impact":"Prevent network congestion and maintain stable connectivity"},{"priority":"low","action":"Investigate and reduce I/O wait times","related_metrics":["io_wait"],"estimated_impact":"Improve system responsiveness and throughput"},{"priority":"low","action":"Review and optimize thread management","related_metrics":["thread_count"],"estimated_impact":"Improve resource utilization and prevent thread-related issues"},{"priority":"low","action":"Monitor active connections and optimize if needed","related_metrics":["active_connections"],"estimated_impact":"Maintain stable connectivity and prevent connection-related issues"},{"priority":"medium","action":"Investigate and reduce error rate","related_metrics":["error_rate"],"estimated_impact":"Improve service reliability and user satisfaction"},{"priority":"low","action":"Monitor and manage system temperature","related_metrics":["temperature_celsius"],"estimated_impact":"Prevent overheating and maintain hardware health"},{"priority":"low","action":"Monitor and optimize power consumption","related_metrics":["power_consumption_watts"],"estimated_impact":"Reduce energy costs and environmental impact"}]}
-{"recommendations":[{"priority":"high","action":"Immediately investigate API Gateway as it was recently in a degraded state","related_metrics":["service.api_gateway"],"estimated_impact":"Resolve potential outages or performance issues"},{"priority":"high","action":"Address high CPU usage which exceeded 80% threshold at 93%","related_metrics":["cpu_usage"],"estimated_impact":"Reduce the risk of service disruptions"},{"priority":"medium","action":"Investigate sudden latency increase that's close to threshold at 139ms","related_metrics":["latency_ms"],"estimated_impact":"Improve application response times"},{"priority":"medium","action":"Monitor network traffic as it exceeded thresholds (1171KBps in, 1193KBps out)","related_metrics":["network_in_kbps","network_out_kbps"],"estimated_impact":"Prevent potential bandwidth saturation"},{"priority":"low","action":"Review and optimize thread management to reduce thread count","related_metrics":["thread_count"],"estimated_impact":"Improve resource utilization"},{"priority":"low","action":"Evaluate and potentially optimize disk usage to prevent it from exceeding 80%","related_metrics":["disk_usage"],"estimated_impact":"Maintain storage performance and availability"},{"priority":"low","action":"Monitor power consumption and temperature trends","related_metrics":["power_consumption_watts","temperature_celsius"],"estimated_impact":"Prevent hardware failures and reduce energy costs"}]}
-{"recommendations":[{"priority":"high","action":"Investigate and resolve API Gateway performance issues","related_metrics":["service.api_gateway","latency_ms"],"estimated_impact":"Improve response times and overall service reliability"},{"priority":"medium","action":"Monitor CPU usage closely to prevent throttling","related_metrics":["cpu_usage"],"estimated_impact":"Prevent potential downtime due to high CPU usage"},{"priority":"medium","action":"Check for memory leaks or inefficient memory usage patterns","related_metrics":["memory_usage"],"estimated_impact":"Improve memory efficiency and reduce potential crashes"},{"priority":"low","action":"Review network usage patterns and optimize if necessary","related_metrics":["network_in_kbps","network_out_kbps"],"estimated_impact":"Reduce network bandwidth consumption"},{"priority":"low","action":"Monitor temperature to prevent hardware issues","related_metrics":["temperature_celsius"],"estimated_impact":"Prevent hardware overheating and failures"}]}
-{"recommendations":[{"priority":"medium","action":"Investigate network traffic patterns","related_metrics":["network_in_kbps","network_out_kbps"],"estimated_impact":"Potential network congestion"},{"priority":"medium","action":"Monitor latency trends and optimize database queries","related_metrics":["latency_ms"],"estimated_impact":"Improved response times"},{"priority":"low","action":"Increase thread pool size based on current load","related_metrics":["thread_count"],"estimated_impact":"Better handling of concurrent requests"}]}
+[
+  {
+    "recommendations": [
+      {
+        "priority": "high",
+        "action": "Investigate API gateway degradation and resolve the issue",
+        "related_metrics": ["service.api_gateway", "latency_ms", "error_rate"],
+        "estimated_impact": "Reduce latency and error rate, improve service quality"
+      },
+      {
+        "priority": "medium",
+        "action": "Optimize application to reduce CPU usage below 80%",
+        "related_metrics": ["cpu_usage"],
+        "estimated_impact": "Improve overall system performance and stability"
+      },
+      {
+        "priority": "medium",
+        "action": "Increase memory allocation or optimize memory usage",
+        "related_metrics": ["memory_usage"],
+        "estimated_impact": "Reduce potential for out-of-memory errors"
+      },
+      {
+        "priority": "medium",
+        "action": "Investigate high latency and optimize performance",
+        "related_metrics": ["latency_ms"],
+        "estimated_impact": "Improve response times and user experience"
+      },
+      {
+        "priority": "medium",
+        "action": "Free up disk space or expand storage capacity",
+        "related_metrics": ["disk_usage"],
+        "estimated_impact": "Prevent storage-related issues and maintain system functionality"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor network traffic and consider optimizing or upgrading bandwidth",
+        "related_metrics": ["network_in_kbps", "network_out_kbps"],
+        "estimated_impact": "Prevent network congestion and maintain stable connectivity"
+      },
+      {
+        "priority": "low",
+        "action": "Investigate and reduce I/O wait times",
+        "related_metrics": ["io_wait"],
+        "estimated_impact": "Improve system responsiveness and throughput"
+      },
+      {
+        "priority": "low",
+        "action": "Review and optimize thread management",
+        "related_metrics": ["thread_count"],
+        "estimated_impact": "Improve resource utilization and prevent thread-related issues"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor active connections and optimize if needed",
+        "related_metrics": ["active_connections"],
+        "estimated_impact": "Maintain stable connectivity and prevent connection-related issues"
+      },
+      {
+        "priority": "medium",
+        "action": "Investigate and reduce error rate",
+        "related_metrics": ["error_rate"],
+        "estimated_impact": "Improve service reliability and user satisfaction"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor and manage system temperature",
+        "related_metrics": ["temperature_celsius"],
+        "estimated_impact": "Prevent overheating and maintain hardware health"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor and optimize power consumption",
+        "related_metrics": ["power_consumption_watts"],
+        "estimated_impact": "Reduce energy costs and environmental impact"
+      }
+    ]
+  },
+  {
+    "recommendations": [
+      {
+        "priority": "high",
+        "action": "Immediately investigate API Gateway as it was recently in a degraded state",
+        "related_metrics": ["service.api_gateway"],
+        "estimated_impact": "Resolve potential outages or performance issues"
+      },
+      {
+        "priority": "high",
+        "action": "Address high CPU usage which exceeded 80% threshold at 93%",
+        "related_metrics": ["cpu_usage"],
+        "estimated_impact": "Reduce the risk of service disruptions"
+      },
+      {
+        "priority": "medium",
+        "action": "Investigate sudden latency increase that's close to threshold at 139ms",
+        "related_metrics": ["latency_ms"],
+        "estimated_impact": "Improve application response times"
+      },
+      {
+        "priority": "medium",
+        "action": "Monitor network traffic as it exceeded thresholds (1171KBps in, 1193KBps out)",
+        "related_metrics": ["network_in_kbps", "network_out_kbps"],
+        "estimated_impact": "Prevent potential bandwidth saturation"
+      },
+      {
+        "priority": "low",
+        "action": "Review and optimize thread management to reduce thread count",
+        "related_metrics": ["thread_count"],
+        "estimated_impact": "Improve resource utilization"
+      },
+      {
+        "priority": "low",
+        "action": "Evaluate and potentially optimize disk usage to prevent it from exceeding 80%",
+        "related_metrics": ["disk_usage"],
+        "estimated_impact": "Maintain storage performance and availability"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor power consumption and temperature trends",
+        "related_metrics": ["power_consumption_watts", "temperature_celsius"],
+        "estimated_impact": "Prevent hardware failures and reduce energy costs"
+      }
+    ]
+  },
+  {
+    "recommendations": [
+      {
+        "priority": "high",
+        "action": "Investigate and resolve API Gateway performance issues",
+        "related_metrics": ["service.api_gateway", "latency_ms"],
+        "estimated_impact": "Improve response times and overall service reliability"
+      },
+      {
+        "priority": "medium",
+        "action": "Monitor CPU usage closely to prevent throttling",
+        "related_metrics": ["cpu_usage"],
+        "estimated_impact": "Prevent potential downtime due to high CPU usage"
+      },
+      {
+        "priority": "medium",
+        "action": "Check for memory leaks or inefficient memory usage patterns",
+        "related_metrics": ["memory_usage"],
+        "estimated_impact": "Improve memory efficiency and reduce potential crashes"
+      },
+      {
+        "priority": "low",
+        "action": "Review network usage patterns and optimize if necessary",
+        "related_metrics": ["network_in_kbps", "network_out_kbps"],
+        "estimated_impact": "Reduce network bandwidth consumption"
+      },
+      {
+        "priority": "low",
+        "action": "Monitor temperature to prevent hardware issues",
+        "related_metrics": ["temperature_celsius"],
+        "estimated_impact": "Prevent hardware overheating and failures"
+      }
+    ]
+  },
+  {
+    "recommendations": [
+      {
+        "priority": "medium",
+        "action": "Investigate network traffic patterns",
+        "related_metrics": ["network_in_kbps", "network_out_kbps"],
+        "estimated_impact": "Potential network congestion"
+      },
+      {
+        "priority": "medium",
+        "action": "Monitor latency trends and optimize database queries",
+        "related_metrics": ["latency_ms"],
+        "estimated_impact": "Improved response times"
+      },
+      {
+        "priority": "low",
+        "action": "Increase thread pool size based on current load",
+        "related_metrics": ["thread_count"],
+        "estimated_impact": "Better handling of concurrent requests"
+      }
+    ]
+  }
+]
