@@ -1,0 +1,34 @@
+import { createReadStream } from "fs";
+import { createInterface } from "readline";
+
+export async function* streamJsonArray<T = unknown>(
+  filePath: string,
+): AsyncGenerator<T, void, undefined> {
+  const rl = createInterface({
+    input: createReadStream(filePath, { encoding: "utf8" }),
+    crlfDelay: Infinity,
+  });
+
+  let buffer = "";
+  let depth = 0;
+  let started = false;
+
+  for await (const line of rl) {
+    const trimmed = line.trim();
+    if (trimmed === "[" || trimmed === "]") continue;
+    if (!started && trimmed.startsWith("{")) started = true;
+
+    buffer += (buffer ? "\n" : "") + line;
+
+    for (const c of line) {
+      if (c === "{") depth++;
+      else if (c === "}") depth--;
+    }
+
+    if (started && depth === 0 && buffer.trim().startsWith("{")) {
+      const obj = buffer.trim().replace(/,\s*$/, "");
+      yield JSON.parse(obj) as T;
+      buffer = "";
+    }
+  }
+}
